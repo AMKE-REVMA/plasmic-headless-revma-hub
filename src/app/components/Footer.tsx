@@ -16,6 +16,7 @@ export function Footer() {
       if (typeof window !== "undefined") {
         const path = window.location.pathname;
         const language = path.split("/")[1]?.toUpperCase() || "EL";
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLocale(language);
       }
     }, []);

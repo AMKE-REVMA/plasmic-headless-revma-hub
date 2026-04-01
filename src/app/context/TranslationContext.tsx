@@ -28,6 +28,7 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const pathLocale = window.location.pathname.split('/')[1];
     if (pathLocale === 'el' || pathLocale === 'en') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLanguage(pathLocale);
       localStorage.setItem('language', pathLocale);
     } else {
