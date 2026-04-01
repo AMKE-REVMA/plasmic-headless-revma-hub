@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@apollo/client": "^3.13.6",
@@ -37,7 +38,11 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "allowAny": ["react", "react-dom"]
+      "allowAny": [
+        "react",
+        "react-dom"
+      ]
     }
-  }
+  },
+  "packageManager": "pnpm@10.0.0"
 }
