@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import TimelineEventPopup from './TimelineEventPopup';
 import { useTranslation } from "../context/TranslationContext";
+import Image from "next/image";
 
 interface TimelineEventProps {
     imageSrc: string;
@@ -31,7 +32,7 @@ const TimelineEventLeft: React.FC<TimelineEventProps> = ({
           className="relative cursor-pointer flex-shrink-0 w-[150px] h-[150px] sm:w-[160px] sm:h-[160px] md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] xl:w-[280px] xl:h-[280px]"
           onClick={handleOpenPopup}
         >
-          <img
+          <Image
             src={imageSrc}
             alt={altText}
             className="object-contain w-full h-full"

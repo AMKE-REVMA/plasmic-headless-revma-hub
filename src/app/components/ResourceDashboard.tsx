@@ -5,6 +5,7 @@ import { GET_RESOURCES } from "../../../lib/queries";
 import client from "../../../lib/apollo";
 import { useTranslation } from "../context/TranslationContext";
 import Resources from "./Resources";
+import Image from "next/image"
 
 export default function ResourceDashboard() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -51,6 +52,7 @@ export default function ResourceDashboard() {
 
   useEffect(() => {
     if (!isModalOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedModalCategories([]);
     }
   }, [isModalOpen]);
@@ -74,7 +76,8 @@ export default function ResourceDashboard() {
                 selectedCategories.includes(item.tag) ? "bg-yellow-100" : "hover:bg-yellow-100"
               }`}
             >
-              <img src={item.img} alt={item.title} className="mb-2" style={{ width: "50px", height: "50px", objectFit: "contain" }} />
+
+              <Image src={item.img} alt={item.title} width={50} height={50} className="mb-2 object-contain" />
               <p className="font-semibold text-sm mb-1">{item.title}</p>
               <p className="text-gray-500 text-xs leading-tight">{item.summary}</p>
             </button>
