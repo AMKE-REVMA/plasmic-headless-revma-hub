@@ -1,8 +1,4 @@
-import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
-import ResourceDashboard from "./app/components/ResourceDashboard";
-import StoriesDashboard from "./app/components/StoriesDashboard";
-import TeacherStatements from "./app/components/TeacherStatements";
-import TimelinePreviewCard from "./app/components/TimelinePreviewCard";
+import { initPlasmicLoader } from "@plasmicapp/loader-nextjs/react-server-conditional";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -14,23 +10,4 @@ export const PLASMIC = initPlasmicLoader({
   preview: true, // Set to false in production
 });
 
-// Register your complex components so the Studio can see them
-PLASMIC.registerComponent(ResourceDashboard, {
-  name: "ResourceDashboard",
-  props: {},
-});
 
-PLASMIC.registerComponent(StoriesDashboard, {
-  name: "StoriesDashboard",
-  props: {},
-});
-
-PLASMIC.registerComponent(TeacherStatements, {
-  name: "TeacherStatements",
-  props: {},
-});
-
-PLASMIC.registerComponent(TimelinePreviewCard, {
-  name: "TimelinePreviewCard",
-  props: {},
-});
